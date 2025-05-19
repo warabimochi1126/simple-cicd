@@ -6,7 +6,7 @@ CMD ["bash"]
 FROM base as test-and-build
 COPY . /workspace
 WORKDIR /workspace
-RUN ./gradlew build
+RUN chmod +x ./gradlew && ./gradlew build
 
 # prodution
 FROM openjdk:17 AS production
